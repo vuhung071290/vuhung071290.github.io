@@ -3,18 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vuhung071290.github.io/categories/</loc>
+    <loc>https://vuhung071290.github.io/</loc>
+    <lastmod>2019-06-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vuhung071290.github.io/</loc>
+    <loc>https://vuhung071290.github.io/post/</loc>
+    <lastmod>2019-06-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vuhung071290.github.io/faas/</loc>
+    <lastmod>2019-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://vuhung071290.github.io/tags/</loc>
+    <lastmod>2019-06-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vuhung071290.github.io/tags/faas/</loc>
+    <lastmod>2019-06-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vuhung071290.github.io/tags/serverless/</loc>
+    <lastmod>2019-06-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vuhung071290.github.io/about/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>
