@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>serverless on My blog</title>
+    <title>serverless on Blog của Hùng</title>
     <link>https://vuhung071290.github.io/tags/serverless/</link>
-    <description>Recent content in serverless on My blog</description>
+    <description>Recent content in serverless on Blog của Hùng</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 21 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <language>vn</language>
+    <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vuhung071290.github.io/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Serverless, xu hướng mới của điện toán đám mây</title>
-      <link>https://vuhung071290.github.io/faas/</link>
-      <pubDate>Fri, 21 Jun 2019 00:00:00 +0000</pubDate>
+      <link>https://vuhung071290.github.io/posts/faas/</link>
+      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://vuhung071290.github.io/faas/</guid>
+      <guid>https://vuhung071290.github.io/posts/faas/</guid>
       <description>Serverless, Faas là gì Serverless là môi trường, nền tảng thực thi ứng dụng và dịch vụ mà không phải quan tâm đến máy chủ, việc phân bổ quản lý tài nguyên sẽ do nền tảng này đảm nhiệm. Nói nôm na là coder chỉ cần tập trung vào code.
-Serverless có hai dịch vụ chính :
+  Serverless có hai dịch vụ chính :
  Backend as a Service (Baas)
 Một số ứng dụng chuyển phần lớn logic về front-end, không có server để làm back-end mà chỉ sử dụng các API của bên thứ 3 để thay thế, có rất nhiều đơn vị thứ 3 cung cấp dịch vụ này như Parse, Firebase và AWS Cognito&amp;hellip; Cách này khá tiện lợi vì giảm được việc viết code phần backend nhưng có nhược điểm là phụ thuộc nhiều vào bên thứ 3</description>
     </item>
