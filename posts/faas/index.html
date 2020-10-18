@@ -157,7 +157,7 @@
 
 <hr>
 <h2 id="serverless-faas-là-gì">Serverless, Faas là gì</h2>
-<p>Serverless là môi trường, nền tảng thực thi ứng dụng và dịch vụ mà không phải quan tâm đến máy chủ, việc phân bổ quản lý tài nguyên sẽ do nền tảng này đảm nhiệm. Nói nôm na là coder chỉ cần tập trung vào code.</p>
+<p>Serverless là môi trường, nền tảng thực thi ứng dụng và dịch vụ mà việc phân bổ quản lý tài nguyên sẽ do nền tảng này đảm nhiệm. Nói nôm na là dev chỉ cần tập trung vào code.</p>
 <figure>
     <img src="/images/faas2.jpg"/> 
 </figure>
@@ -170,7 +170,7 @@
 </li>
 <li>
 <p>Function as Service (FaaS)</p>
-<p>Ở mô hình này, bạn sẽ phải viết code ở phần backend, nhưng thay vì deploy lên server, bạn deploy dưới dạng một function. Funtion này có thể được gọi dưới dạng RestAPI hoặc chạy theo lịch đã sắp sẵn.</p>
+<p>Ở mô hình này, bạn sẽ phải viết code ở phần backend, nhưng khi deploy lên server, bạn deploy dưới dạng một function. Funtion này có thể được gọi dưới dạng RestAPI hoặc chạy theo lịch đã sắp sẵn.</p>
 <p>Hiện tại, khi nói đến serverless, người ta thường nói đến khái niệm thứ hai – FaaS.</p>
 </li>
 </ul>
@@ -188,7 +188,7 @@
 <p>Dễ scale mở rộng: Khi số lượng request tăng cao, bạn phải nâng cấp server để đảm bảo tốc độ, việc này khá rườm rà mất thời gian. Với Serverless, bên thứ 3 sẽ tự động tạo thêm nhiều process khi có nhiều request.</p>
 </li>
 <li>
-<p>Đơn giản hoá việc code và deploy: Với client-server, bạn phải biết cách build, deploy code lên server, bảo trì và kết nối tới server. Với Serverless, bạn chỉ việc code, mọi việc còn lại sẽ được thực hiện giúp bạn.</p>
+<p>Đơn giản hoá việc code và deploy: Với server truyền thống, bạn phải biết cách build, deploy code lên server, bảo trì và kết nối tới server. Với Serverless, bạn chỉ việc code, mọi việc còn lại sẽ được thực hiện giúp bạn.</p>
 </li>
 </ul>
 <h3 id="nhược-điểm">Nhược điểm</h3>
@@ -204,7 +204,7 @@
 </li>
 </ul>
 <h2 id="cách-họat-động-của-faas">Cách họat động của Faas</h2>
-<p>Như đã đề cập với Faas chúng ta deploy các function, các function này hoạt động theo kiến trúc event driven, mỗi function được định nghĩa các event-souce (một request REST, một file được upload, một record mới được insert trong database&hellip;) khi các event-source được kích hoạt,server sẽ thực thi code của function tương ứng.</p>
+<p>Như đã đề cập với Faas chúng ta deploy các function, các function này hoạt động theo kiến trúc event driven, mỗi function được định nghĩa các event-souce (một request REST, một file được upload, một record mới được insert trong database&hellip;) khi các event-source được kích hoạt, server sẽ thực thi code của function tương ứng.</p>
 <figure>
     <img src="/images/faas4.jpg"/> 
 </figure>
@@ -250,7 +250,7 @@ phát triển dựa trên nền tảng của k8s như openFaas, openWhisk, Fn, K
 <h2 id="kết">Kết</h2>
 <ul>
 <li>
-<p>Serverless không phải là giải pháp thay thế  cho server long-running truyền thống, với ưu nhược điểm của mình serverless phù hợp cho một số <a href="https://www.simform.com/serverless-examples-aws-lambda-use-cases/">usecases</a> nhất định. trong thực tế, các ứng dụng phức tạp có thể sử dụng các server truyền thống kết hợp với functions serverless.</p>
+<p>Serverless không phải là giải pháp thay thế cho server long-running truyền thống, với ưu nhược điểm của mình serverless phù hợp cho một số <a href="https://www.simform.com/serverless-examples-aws-lambda-use-cases/">usecases</a> nhất định. trong thực tế, các ứng dụng phức tạp có thể sử dụng các server truyền thống kết hợp với functions serverless.</p>
 </li>
 <li>
 <p>Vì serverless còn rất mới mẻ nên chưa có một chuẩn chung về cách vận hành và sử dụng giữa các nhà cung cấp, việc thiếu vắng các tool hỗ trợ về debug, monitoring, các framework chưa mature cũng là trở ngại lớn.</p>
