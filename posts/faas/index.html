@@ -12,6 +12,7 @@
 
 
 
+<meta name="author" content="Hung Le">
 <meta name="description" content="Serverless, xu hướng mới của điện toán đám mây.">
 <meta name="keywords" content="blog,developer,personal">
 
@@ -184,19 +185,19 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Serverless là nền tảng thực thi ứng dụng mà việc phân bổ quản lý tài nguyên sẽ do nền tảng này đảm nhiệm.</p>
+<p>Serverless là nền tảng thực thi ứng dụng mà trong đó việc phân bổ quản lý tài nguyên sẽ do nền tảng này đảm nhiệm, chúng ta chỉ cần tập trung vào việc phát triển ứng dụng của mình.</p>
 <figure><img src="/images/faas/faas2.jpg">
 </figure>
 
-<p>Serverless có hai dịch vụ chính :</p>
+<p>Serverless có hai dịch vụ chính:</p>
 <ul>
 <li>
 <p>Backend as a Service (Baas)</p>
-<p>Một số ứng dụng chuyển phần lớn logic về front-end, không có server để làm back-end mà chỉ sử dụng các API của bên thứ 3 để thay thế, có rất nhiều đơn vị thứ 3 cung cấp dịch vụ này như Parse, Firebase và AWS Cognito&hellip; Cách này khá tiện lợi vì giảm được việc viết code phần backend nhưng có nhược điểm là phụ thuộc nhiều vào bên thứ 3</p>
+<p>Một số ứng dụng chuyển phần lớn logic về front-end, không có server để làm back-end mà chỉ sử dụng các API của bên thứ 3 để thay thế, có rất nhiều đơn vị thứ 3 cung cấp dịch vụ này như Parse, Firebase và AWS Cognito, &hellip; Cách này khá tiện lợi vì giảm được việc viết code phần backend nhưng có nhược điểm là phụ thuộc nhiều vào bên thứ 3</p>
 </li>
 <li>
 <p>Function as Service (FaaS)</p>
-<p>Ở mô hình này, bạn sẽ phải viết code ở phần backend, nhưng khi deploy lên server, bạn deploy dưới dạng một function. Funtion này có thể được gọi dưới dạng RestAPI hoặc chạy theo lịch đã sắp sẵn.</p>
+<p>Ở mô hình này, bạn sẽ phải viết code ở phần backend, nhưng khi deploy lên server, bạn deploy dưới dạng một Function, Funtion này có thể được gọi dưới dạng RestAPI hoặc chạy theo lịch đã sắp sẵn.</p>
 <p>Hiện tại, khi nói đến serverless, người ta thường nói đến khái niệm thứ hai – FaaS.</p>
 </li>
 </ul>
@@ -219,7 +220,7 @@
 </h3>
 <ul>
 <li>
-<p>Giá cả phải chăng: Với kiến trúc client-server, bạn phải thuê server theo tháng. Với kiến trúc Serverless, do chi phí được tính theo số lần gọi Function nên rất rẻ.</p>
+<p>Giá cả phải chăng: Với kiến trúc server truyền thống, bạn phải thuê server theo tháng. Với kiến trúc Serverless, do chi phí được tính theo số lần gọi Function nên rất rẻ.</p>
 </li>
 <li>
 <p>Dễ scale mở rộng: Khi số lượng request tăng cao, bạn phải nâng cấp server để đảm bảo tốc độ, việc này khá rườm rà mất thời gian. Với Serverless, bên thứ 3 sẽ tự động tạo thêm nhiều process khi có nhiều request.</p>
@@ -240,7 +241,7 @@
 <p>Bảo mật: Để sử dụng tài nguyên hiệu quả, nhà cung cấp dịch vụ có thể cài đặt ứng dụng của nhiều khách hàng khác nhau trên cùng một server vật lý. Điều đó tiềm ẩn nguy cơ về bảo mật, nếu như ứng dụng của bạn làm việc với dữ liệu quan trọng.</p>
 </li>
 <li>
-<p>Perfomance: Serverless không hoạt động hiệu quả đối với ứng dụng dạng long-running. Một request trên serverless sẽ tốn nhiều thời gian hơn chạy trên server riêng vì code chỉ chạy mỗi khi có request nên sẽ mất khoảng 20-50ms để start-up.</p>
+<p>Performance: Serverless không hoạt động hiệu quả đối với ứng dụng dạng long-running. Một request trên serverless có thể tốn nhiều thời gian hơn vì sẽ mất khoảng 20-50ms để warn-up.</p>
 </li>
 <li>
 <p>Phụ thuộc vào nhà cung cấp dịch vụ: Khó debug, tài nguyên (CPU, RAM) được bên thứ 3 quản lý nên đôi khi ta sẽ khó mà tái tạo môi trường ở local để debug code của FaaS.</p>
@@ -253,16 +254,16 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Như đã đề cập với Faas chúng ta deploy các function, các function này hoạt động theo kiến trúc event driven, mỗi function được định nghĩa các event-souce (một request REST, một file được upload, một record mới được insert trong database&hellip;) khi các event-source được kích hoạt, server sẽ thực thi code của function tương ứng.</p>
+<p>Như đã đề cập với Faas chúng ta deploy các function, các function này hoạt động theo kiến trúc event-driven, mỗi function được định nghĩa các event-source (một request REST, một file được upload, một record mới được insert trong database&hellip;) khi các event-source được kích hoạt, server sẽ thực thi code của function tương ứng.</p>
 <figure><img src="/images/faas/faas4.jpg">
 </figure>
 
 <p>Hiện nay ngoài các nhà cung cấp dịch vụ Faas lớn như AWS Lambda, Azure Functions hay Google functions, còn có nhiều các <a href="https://github.com/anaibol/awesome-serverless"  class="external-link" target="_blank" rel="noopener">framework, tools open source</a> đã và đang được phát triển dành cho Faas, nổi bật là các framework được phát triển dựa trên nền tảng của k8s như openFaas, openWhisk, Fn, Kubeless&hellip;</p>
-<p>Để hiểu rõ cách một hệ thống serverless hoạt động, hãy xem qua kiến trúc của <em>openFaas</em></p>
+<p>Để hiểu rõ cách một hệ thống serverless hoạt động, hãy xem qua kiến trúc của openFaas</p>
 <figure><img src="/images/faas/faas5.jpg">
 </figure>
 
-<p>OpenFaas gồm hai thành phần chính:</p>
+<p>openFaas gồm hai thành phần chính:</p>
 <figure><img src="/images/faas/faas6.png"
     alt="API Gateway: chịu trách nhiệm đón các request được gọi đến hệ thống, forward các request này đến watchdog, ngoài ra nó còn collect các metrics của functions để thực hiện monitoring"><figcaption>
       <p>API Gateway: chịu trách nhiệm đón các request được gọi đến hệ thống, forward các request này đến watchdog, ngoài ra nó còn collect các metrics của functions để thực hiện monitoring</p>
@@ -281,13 +282,13 @@
 <p>Tạo một function rồi đăng kí với OpenFaas qua UI hoặc CLI dưới dạng docker image, image này sẽ được Watchdog quản lý và dùng để khởi tạo function</p>
 </li>
 <li>
-<p>Khi một request REST được gọi đến hệ thống, API Gateway forward các request này đến watchdog, dựa trên số lượng request API Gateway cũng gửi kèm các thông số về số lượng để Watchdog scale số pods/container</p>
+<p>Khi một request REST được gọi đến hệ thống, API Gateway forward các request này đến watchdog, dựa trên số lượng request API Gateway cũng gửi kèm các thông số về số lượng để Watchdog scale số pod/container</p>
 </li>
 <li>
 <p>Sau khi nhận request, Watchdog làm 3 việc</p>
 <ul>
 <li>đầu tiên nó tạo các biến môi trường từ header của request,</li>
-<li>sau đó khởi chạy function bằng docker swarm với imange function đã được đăng kí trước đó</li>
+<li>sau đó khởi chạy function bằng docker swarm với image function đã được đăng kí trước đó</li>
 <li>cuối cùng nó truyền nội dụng của request vào function đã tạo thông qua stdin</li>
 </ul>
 </li>
@@ -305,13 +306,13 @@
 </h2>
 <ul>
 <li>
-<p>Serverless không phải là giải pháp thay thế cho server long-running truyền thống, với ưu nhược điểm của mình serverless phù hợp cho một số <a href="https://www.simform.com/serverless-examples-aws-lambda-use-cases/"  class="external-link" target="_blank" rel="noopener">usecases</a> nhất định. trong thực tế, các ứng dụng phức tạp có thể sử dụng các server truyền thống kết hợp với functions serverless.</p>
+<p>Serverless không phải là giải pháp thay thế cho server long-running truyền thống, với ưu nhược điểm của mình serverless phù hợp cho một số <a href="https://www.simform.com/serverless-examples-aws-lambda-use-cases/"  class="external-link" target="_blank" rel="noopener">usecases</a> nhất định. trong thực tế các ứng dụng phức tạp có thể sử dụng các server truyền thống kết hợp với functions serverless.</p>
 </li>
 <li>
 <p>Vì serverless còn rất mới mẻ nên chưa có một chuẩn chung về cách vận hành và sử dụng giữa các nhà cung cấp, việc thiếu vắng các tool hỗ trợ về debug, monitoring, các framework chưa mature cũng là trở ngại lớn.</p>
 </li>
 <li>
-<p>Hiện tại, Serverless là một xu hướng phù hợp cho những công ty đang sử dụng cloud của các ông lớn để tiết kiệm chi phí vận hành và thời gian code, với những công ty sử dụng cơ sở hạ tầng riêng hoặc private cloud có lẽ nên chờ thêm một gian để hệ sinh thái open source của serverless hoàn thiện hơn.s</p>
+<p>Hiện tại, Serverless là một xu hướng phù hợp cho những công ty đang sử dụng cloud của các ông lớn để tiết kiệm chi phí vận hành và thời gian code, với những công ty sử dụng cơ sở hạ tầng riêng hoặc private cloud có lẽ nên chờ thêm một gian để hệ sinh thái open source của serverless hoàn thiện hơn.</p>
 </li>
 </ul>
 
@@ -350,7 +351,7 @@
     ©
     
     2024
-    
+     Hung Le 
     ·
     
     Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
