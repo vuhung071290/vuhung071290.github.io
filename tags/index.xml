@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Blog của Culi Code</title>
+    <title>Tags on Culi Code</title>
     <link>https://vuhung071290.github.io/tags/</link>
-    <description>Recent content in Tags on Blog của Culi Code</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Tags on Culi Code</description>
+    <generator>Hugo</generator>
     <language>vn</language>
-    <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://vuhung071290.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://vuhung071290.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>faas</title>
+      <title>Cloud</title>
+      <link>https://vuhung071290.github.io/tags/cloud/</link>
+      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://vuhung071290.github.io/tags/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Faas</title>
       <link>https://vuhung071290.github.io/tags/faas/</link>
       <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://vuhung071290.github.io/tags/faas/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>serverless</title>
+      <title>Serverless</title>
       <link>https://vuhung071290.github.io/tags/serverless/</link>
       <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://vuhung071290.github.io/tags/serverless/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

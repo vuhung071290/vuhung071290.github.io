@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Faas on Culi Code</title>
-    <link>https://vuhung071290.github.io/tags/faas/</link>
-    <description>Recent content in Faas on Culi Code</description>
+    <title>Cloud on Culi Code</title>
+    <link>https://vuhung071290.github.io/tags/cloud/</link>
+    <description>Recent content in Cloud on Culi Code</description>
     <generator>Hugo</generator>
     <language>vn</language>
     <lastBuildDate>Mon, 24 Jun 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://vuhung071290.github.io/tags/faas/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vuhung071290.github.io/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Serverless, xu hướng mới của điện toán đám mây</title>
       <link>https://vuhung071290.github.io/posts/faas/</link>
