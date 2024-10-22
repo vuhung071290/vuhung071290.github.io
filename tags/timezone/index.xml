@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Culi Code</title>
-    <link>https://vuhung071290.github.io/posts/</link>
-    <description>Recent content in Posts on Culi Code</description>
+    <title>Timezone on Culi Code</title>
+    <link>https://vuhung071290.github.io/tags/timezone/</link>
+    <description>Recent content in Timezone on Culi Code</description>
     <generator>Hugo</generator>
     <language>vn</language>
     <lastBuildDate>Sat, 25 Jan 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://vuhung071290.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vuhung071290.github.io/tags/timezone/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lịch sử ra đời và phát triển của hệ thống giờ quốc tế GMT, DST, UTC</title>
       <link>https://vuhung071290.github.io/posts/timezone/</link>
       <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
       <guid>https://vuhung071290.github.io/posts/timezone/</guid>
       <description>&lt;h1 id=&#34;table-of-contents&#34;&gt;&#xD;&#xA;  Table of contents&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#table-of-contents&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#1-gi%e1%bb%9d-gmt-greenwich-mean-time&#34; &gt;Giờ GMT (Greenwich Mean Time)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#2-gi%e1%bb%9d-dst-daylight-saving-time&#34; &gt;Giờ DST (Daylight Saving Time)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#3-gi%e1%bb%9d-utc-coordinated-universal-time&#34; &gt;Giờ UTC (Coordinated Universal Time)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#4-so-s%c3%a1nh-gi%e1%bb%9d-utc-v%c3%a0-gmt&#34; &gt;So sánh giờ UTC và GMT&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;1-giờ-gmt-greenwich-mean-time&#34;&gt;&#xD;&#xA;  1. Giờ GMT (Greenwich Mean Time)&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1-gi%e1%bb%9d-gmt-greenwich-mean-time&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;11-hiểu-rõ-về-lịch-sử-hình-thành-giờ-gmt&#34;&gt;&#xD;&#xA;  1.1 Hiểu rõ về lịch sử hình thành giờ GMT&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#11-hi%e1%bb%83u-r%c3%b5-v%e1%bb%81-l%e1%bb%8bch-s%e1%bb%ad-h%c3%acnh-th%c3%a0nh-gi%e1%bb%9d-gmt&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;Trước năm 1650, con người đã tự tìm hiệu về quy luật vận hành ngày đêm của mặt trời và trái đất. Cho đến năm 1650, người Anh đã chuyển quy luật này thành thời gian chính thống trên chiếc đồng hồ quả lắc.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Serverless, xu hướng mới của điện toán đám mây</title>
-      <link>https://vuhung071290.github.io/posts/faas/</link>
-      <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
-      <guid>https://vuhung071290.github.io/posts/faas/</guid>
-      <description>&lt;h2 id=&#34;serverless-faas-là-gì&#34;&gt;&#xD;&#xA;  Serverless, Faas là gì&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#serverless-faas-l%c3%a0-g%c3%ac&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Serverless là nền tảng thực thi ứng dụng mà trong đó việc phân bổ quản lý tài nguyên sẽ do nền tảng này đảm nhiệm, chúng ta chỉ cần tập trung vào việc phát triển ứng dụng của mình.&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;https://vuhung071290.github.io/images/faas/faas2.jpg&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Serverless có hai dịch vụ chính:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Backend as a Service (Baas)&lt;/p&gt;&#xA;&lt;p&gt;Một số ứng dụng chuyển phần lớn logic về front-end, không có server để làm back-end mà chỉ sử dụng các API của bên thứ 3 để thay thế, có rất nhiều đơn vị thứ 3 cung cấp dịch vụ này như Parse, Firebase, AWS Cognito, &amp;hellip; Cách này khá tiện lợi vì giảm được việc viết code phần backend nhưng có nhược điểm là phụ thuộc nhiều vào bên thứ 3&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
