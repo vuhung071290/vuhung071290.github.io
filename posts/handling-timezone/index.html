@@ -152,7 +152,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              2 minutes read
+              3 minutes read
             </span>
           </div>
           
@@ -174,7 +174,7 @@
         
           <img src="/images/handling-timezone/timezones-for-developers.png" alt="Featured image"/>
         
-        <p>Trong lập trình chúng ta phải làm việc với <strong>DateTime</strong> khá nhiều, trong đó <a href="https://vuhung071290.github.io/posts/timezone/#3-timezone"  class="external-link" target="_blank" rel="noopener">TimeZone</a> cũng là một vấn đề nan giải, bài viết này là tổng hợp những kinh nghiệm khi làm việc với kiểu dữ liệu này.</p>
+        <p>Trong lập trình chúng ta phải làm việc với <strong>DateTime</strong> khá nhiều, trong đó <a href="https://vuhung071290.github.io/posts/timezone/#timezone-m%c3%bai-gi%e1%bb%9d"  class="external-link" target="_blank" rel="noopener">TimeZone</a> cũng là một vấn đề dễ gây nhầm lẫn, bài viết này là tổng hợp những kinh nghiệm khi làm việc với kiểu dữ liệu này.</p>
 <h2 id="qui-chuẩn-quốc-tế-khi-biểu-diễn-datetime">
   Qui chuẩn quốc tế khi biểu diễn DateTime
   <a class="heading-link" href="#qui-chu%e1%ba%a9n-qu%e1%bb%91c-t%e1%ba%bf-khi-bi%e1%bb%83u-di%e1%bb%85n-datetime">
@@ -182,7 +182,7 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Để biểu diễn ngày giờ theo <a href="https://vuhung071290.github.io/posts/timezone/"  class="external-link" target="_blank" rel="noopener">hệ thống giờ quốc tế</a> ta có các qui chuẩn sau:</p>
+<p>Để biểu diễn DateTime theo <a href="https://vuhung071290.github.io/posts/timezone/"  class="external-link" target="_blank" rel="noopener">giờ quốc tế</a> ta có các qui chuẩn sau:</p>
 <ul>
 <li>
 <p><a href="https://en.wikipedia.org/wiki/Unix_time"  class="external-link" target="_blank" rel="noopener">Epoch time</a> là biểu diễn dưới dạng số, đo bằng số giây không nhuận đã trôi qua kể từ 00:00:00 UTC ngày 1 tháng 1 năm 1970, ví dụ</p>
@@ -206,12 +206,11 @@
 </blockquote>
 </li>
 </ul>
-<p><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"  class="external-link" target="_blank" rel="noopener">IANA Time Zone Database</a> Hay còn gọi là tz database, là một bộ database tổng hợp thông tin của toàn bộ múi giờ trên thế giới, được quản lý bởi tổ chức ICANN (Nếu bạn chưa biết thì múi giờ có thể thay đổi vì địa chính trị, hoặc theo mùa do áp dụng giờ <a href="https://vuhung071290.github.io/posts/timezone/#32-gi%e1%bb%9d-dst-daylight-saving-time"  class="external-link" target="_blank" rel="noopener">DST</a>).
-Trong tz database, một múi giờ sẽ có tên gọi dựa trên vị trí địa lý của nó, theo dạng Area/Location, trong đó area là tên của lục địa hoặc đại dương, location là tên của thành phố hoặc hòn đảo.</p>
+<p>Ngoài ra, múi giờ có thể thay đổi do địa chính trị, hoặc do áp dụng <a href="https://vuhung071290.github.io/posts/timezone/#gi%e1%bb%9d-dst-daylight-saving-time"  class="external-link" target="_blank" rel="noopener">giờ DST</a> nên cũng cần có <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"  class="external-link" target="_blank" rel="noopener">IANA Time Zone Database</a>, còn gọi là tz database.
+Đây là một bộ database tổng hợp thông tin của toàn bộ múi giờ trên thế giới, được quản lý bởi tổ chức ICANN. Trong tz database, một múi giờ sẽ có tên gọi dựa trên vị trí địa lý của nó, theo dạng Area/Location, trong đó area là tên của lục địa hoặc đại dương, location là tên của thành phố hoặc hòn đảo. Tuy nhiên, không phải thành phố nào cũng có múi giờ riêng.</p>
 <blockquote>
 <p>Múi giờ ở thành phố Hồ Chí Minh có tên là Asia/Ho_Chi_Minh
-Múi giờ ở Auckland (New Zealand) có tên là Pacific/Auckland
-Tuy nhiên, không phải thành phố nào cũng có múi giờ riêng. Tham khảo danh sách đầy đủ <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"  class="external-link" target="_blank" rel="noopener">ở đây</a>.</p>
+Múi giờ ở Auckland (New Zealand) có tên là Pacific/Auckland</p>
 </blockquote>
 <h2 id="các-nguyên-tắc-khi-xử-lý-datetime">
   Các nguyên tắc khi xử lý DateTime
@@ -220,6 +219,12 @@ Tuy nhiên, không phải thành phố nào cũng có múi giờ riêng. Tham kh
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>Việc tuân thủ những qui tắc sau giúp chúng ta bớt đau đầu trong việc xử lý timezone</p>
+<ul>
+<li><strong>Rule 1: Store datetime in UTC in your database and back end code</strong>: Hãy tưởng tượng dữ liệu của bạn lưu trữ ở những timezone khác nhau, thì việc thống nhất lưu data ở múi giờ nào rất quan trọng, lưu giờ UTC là lựa chọn hợp lý nhất.</li>
+<li><strong>Rule 2: Convert datetime to the user&rsquo;s local timezone using frontend code</strong>:  Mặc dù backend của bạn sẽ trả về thời gian UTC, nhưng frontend có thể dễ dàng chuyển đổi chúng sang múi giờ địa phương của người dùng. Việc này tạo ra sự phân chia nhiệm vụ giữa backend (xử lý theo UTC) và frontend (xử lý theo thời gian địa phương của người dùng). Hãy giữ cho định dạng thời gian trong frontend nhất quán bằng cách sử dụng một tiêu chuẩn, chẳng hạn như ISO 8601. Khi bạn gửi yêu cầu đến backend, hãy gửi thời gian ở định dạng ISO 8601 để backend có thể dễ dàng chuyển đổi nó thành thời gian UTC tương ứng.</li>
+<li><strong>Rule 3: Use datetime libraries</strong>: Hãy luôn sử dụng những thư viện trong các ngôn ngữ/framework để xử lý datetime tốt hơn. Chúng giúp việc chuyển đổi hoặc định dạng theo các tiêu chuẩn (ví dụ: Epoch time, ISO 8601) trở nên dễ dàng hơn nhiều, ngoài ra chúng còn hỗ trợ xử lý giờ DST.</li>
+</ul>
 <h2 id="các-thư-viện-datetime">
   Các thư viện DateTime
   <a class="heading-link" href="#c%c3%a1c-th%c6%b0-vi%e1%bb%87n-datetime">
@@ -227,6 +232,7 @@ Tuy nhiên, không phải thành phố nào cũng có múi giờ riêng. Tham kh
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>Ở <strong>Rule 3</strong> chúng ta nói đề cập về việc sử dụng các thư viện, nên trong phần này chúng ta sẽ tìm hiểu một số thư viện để hiểu hơn về cách lưu trữ, xử lý datetime của chúng</p>
 <h3 id="java-datetime">
   Java DateTime
   <a class="heading-link" href="#java-datetime">
