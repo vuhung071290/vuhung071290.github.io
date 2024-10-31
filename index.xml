@@ -6,14 +6,21 @@
     <description>Recent content on Culi Code</description>
     <generator>Hugo</generator>
     <language>vn</language>
-    <lastBuildDate>Sat, 25 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://vuhung071290.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Kinh nghiệm làm việc với DateTime</title>
+      <title>Java Date Time API</title>
+      <link>https://vuhung071290.github.io/posts/handling-timezone-java/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://vuhung071290.github.io/posts/handling-timezone-java/</guid>
+      <description>&lt;p&gt;Khi xử lý thời gian, trước đây chúng ta thường dùng Date, SimpleDateFormat và Calendar. Date là một moment, thể hiện ngày giờ với TimeZone mặc định của server. Tuy nhiên do thiếu sót trong thiết kế ban đầu nên phần lớn method đã bị deprecated và thay thế bởi Instant&lt;/p&gt;&#xA;&lt;p&gt;Kể từ phiên bản 1.8 trở đi, Java cung cấp những API mạnh mẽ để xử lý ngày - giờ. Dưới đây là diagram tóm tắt cách chuyển đổi qua lại giữa các class&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kinh nghiệm làm việc với datetime</title>
       <link>https://vuhung071290.github.io/posts/handling-timezone/</link>
-      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
       <guid>https://vuhung071290.github.io/posts/handling-timezone/</guid>
-      <description>&lt;p&gt;Trong lập trình chúng ta phải làm việc với &lt;strong&gt;DateTime&lt;/strong&gt; khá nhiều, trong đó &lt;a href=&#34;https://vuhung071290.github.io/posts/timezone/#timezone-m%c3%bai-gi%e1%bb%9d&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TimeZone&lt;/a&gt; cũng là một vấn đề dễ gây nhầm lẫn, bài viết này là tổng hợp những kinh nghiệm khi làm việc với kiểu dữ liệu này.&lt;/p&gt;&#xA;&lt;h2 id=&#34;qui-chuẩn-quốc-tế-khi-biểu-diễn-datetime&#34;&gt;&#xA;  Qui chuẩn quốc tế khi biểu diễn DateTime&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#qui-chu%e1%ba%a9n-qu%e1%bb%91c-t%e1%ba%bf-khi-bi%e1%bb%83u-di%e1%bb%85n-datetime&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Để biểu diễn DateTime theo &lt;a href=&#34;https://vuhung071290.github.io/posts/timezone/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;giờ quốc tế&lt;/a&gt; ta có các qui chuẩn sau:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Unix_time&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Epoch time&lt;/a&gt; là biểu diễn dưới dạng số, đo bằng số giây không nhuận đã trôi qua kể từ 00:00:00 UTC ngày 1 tháng 1 năm 1970, ví dụ&lt;/p&gt;</description>
+      <description>&lt;p&gt;Việc xử lý &lt;a href=&#34;https://vuhung071290.github.io/posts/timezone/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;thời gian&lt;/a&gt; đã là một chủ đề mang lại nhiều cơn đau đầu cho các developers, đặc biệt nếu phải xử lý thời gian theo nhiều &lt;a href=&#34;https://vuhung071290.github.io/posts/timezone/#timezone-m%c3%bai-gi%e1%bb%9d&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;múi giờ&lt;/a&gt; khác nhau, bài viết này là tổng hợp những kinh nghiệm để xử lý kiểu dữ liệu này tốt hơn.&lt;/p&gt;&#xA;&lt;h2 id=&#34;một-số-thuật-ngữ&#34;&gt;&#xA;  Một số thuật ngữ&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#m%e1%bb%99t-s%e1%bb%91-thu%e1%ba%adt-ng%e1%bb%af&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;moment&lt;/strong&gt;: thời gian tuyệt đối&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;rtime&lt;/strong&gt; (relative/represent time): thời gian tương đối, hoặc cũng có thể gọi là thời gian chỉ để hiển thị&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;timezone&lt;/strong&gt;: &lt;a href=&#34;https://vuhung071290.github.io/posts/timezone/#timezone-m%c3%bai-gi%e1%bb%9d&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;múi giờ&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;UTC offset&lt;/strong&gt;: độ lệch so với &lt;a href=&#34;https://vuhung071290.github.io/posts/timezone/#gi%e1%bb%9d-utc-coordinated-universal-time&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;giờ chuẩn UTC&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;moment = rtime + timezone (timezone được đặc trưng bởi UTC offset)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lịch sử ra đời của giờ quốc tế GMT, UTC</title>
